@@ -1,0 +1,30 @@
+<html>
+   <head></head>
+   <body>
+    <center>
+      <h1>Order Report</h1>
+      <table border=15>
+        {% if ord%}
+           <thead>
+            <th>name</th>
+            <th>email</th>
+            <th>credit card number</th>
+            <th>expiry Date</th>
+            <th>cvv</th>
+            <th>message</th>
+           </thead>
+            {%for k in ord%}
+          <tr>
+           <td>{{k.name}}</td>
+           <td>{{k.email}}</td>
+           <td>{{k.ccno}}</td>
+           <td>{{k.expirydate}}</td>
+           <td>{{k.cvv}}</td>
+           <td>{{k.message}}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+     </center>
+     </table>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="product">
+    <h2>Product 1</h2>
+    <button onclick="addToCart('product1')">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <h2>Product 2</h2>
+    <button onclick="addToCart('product2')">Add to Cart</button>
+  </div>
+
+  <div class="cart">
+    <h2>Shopping Cart</h2>
+    <ul id="cartItems">
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css):
+
+css
+Copy code
+body {
+  font-family: Arial, sans-serif;
+}
+
+.product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cart {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 200px;
+}
+
+.cart h2 {
+  margin-top: 0;
+}
+
+.cartItem {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cartItem li {
+  margin-bottom: 5px;
+}
+
+@keyframes validation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+JavaScript (script.js):
+
+javascript
+Copy code
+function addToCart(product) {
+  const cartItems = document.getElementById('cartItems');
+  const item = document.createElement('li');
+  item.textContent = product;
+  cartItems.appendChild(item);
+
+  // Validation animation
+  item.classList.add('animate-validation');
+  setTimeout(() => {
+    item.classList.remove('animate-validation');
+  }, 1000);
+}

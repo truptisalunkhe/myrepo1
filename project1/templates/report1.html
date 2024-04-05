@@ -1,0 +1,22 @@
+<html>
+   <head></head>
+   <body>
+    <center>
+      <h1>Login Report</h1>
+      <table border=15>
+        {% if log %}
+           <thead>
+            <th> email</th>
+            <th>password</th>
+           </thead>
+            {%for k in log%}
+          <tr>
+          <td>{{k.email}}</td>
+           <td>{{k.password}}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+     </center>
+     </table>
+  </body>
+</html>
